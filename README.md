@@ -1,12 +1,12 @@
 # Kony PayPal REST API PoC
 
-This is a brief Proof of Concept on how Kony can integrate with [PayPal's REST API](https://developer.paypal.com/docs/api/overview/) to accept payments on mobile applications. The app only has two functionalities. It can get a new Access Token for authorizing transactions or it can do a full payment cycle. PayPal's REST API exposes many more services than this, but this app is not meant to be a comprehensive demo. It just provides the basic structure to follow for building a full integration.
+This is a brief Proof of Concept on how [Kony](http://www.kony.com/) can integrate with [PayPal's REST API](https://developer.paypal.com/docs/api/overview/) to accept payments on mobile applications. The app only has two functionalities. It can get a new Access Token for authorizing transactions or it can do a full payment cycle. PayPal's REST API exposes many more services than this, but this app is not meant to be a comprehensive demo. It just provides the basic structure to follow for building a full integration.
 
 Note that you will need [PayPal sandbox accounts](https://developer.paypal.com/developer/accounts/) to test. By registering as a developer with PayPal you'll get two sandbox accounts automatically created. A merchant account -your email address with a "-facilitator" suffix- and a customer account -your email address with a "-buyer" suffix. You'll also have to register your app and get a ClientId and Secret for it. I've hardcoded mine to the PaypalServices project for simplicity, but please do replace these with your own as I may deactivate/change mine without further notice.
 
 ## Implementation Notes
 
-1. This PoC was built using Mobile Fabric 6.5 and Kony Studio 6.5.
+1. This PoC was built using [Mobile Fabric 6.5](http://community.kony.com/documentation/integrate-data) and [Kony Studio 6.5](http://community.kony.com/documentation/design-develop) -Now called Visualizer.
 1. PayPal's REST API is based on JSON both for input and output. PayPal does not currently offer XML data on their REST API. if you must use XML data, have a look at their [SOAP API](https://developer.paypal.com/docs/classic/api/).
 2. The application flow for authorizing a payment with PayPal's REST API requires that your app must present your user with a PayPal login and authorization form. Once authorization is granted, PayPal will yield control back to your app.
    * Note that for native Android and iOS, PayPal provides an SDK for each platform, which includes the visual components for the login and authorization forms, so the user never leaves your app.
