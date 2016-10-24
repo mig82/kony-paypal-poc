@@ -6,6 +6,7 @@ Note that you will need [PayPal sandbox accounts](https://developer.paypal.com/d
 
 ## Implementation Notes
 
+1. This PoC was built using Mobile Fabric 6.5 and Kony Studio 6.5.
 1. PayPal's REST API is based on JSON both for input and output. PayPal does not currently offer XML data on their REST API. if you must use XML data, have a look at their [SOAP API](https://developer.paypal.com/docs/classic/api/).
 2. The application flow for authorizing a payment with PayPal's REST API requires that your app must present your user with a PayPal login and authorization form. Once authorization is granted, PayPal will yield control back to your app.
    * Note that for native Android and iOS, PayPal provides an SDK for each platform, which includes the visual components for the login and authorization forms, so the user never leaves your app.
