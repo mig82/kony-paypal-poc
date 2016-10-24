@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application id="PaypalApiPoc" name="PaypalApiPoc">
+    <container isflex="false" displayname="Form" id="browserFrm" type="form"/>
+    <container isflex="false" displayname="Form" id="frm1" type="form">
+        <component displayname="TextBox2" id="itemDescTxt" type="textbox2"/>
+        <component displayname="ListBox" id="ccyLBox" type="listbox"/>
+        <component displayname="TextBox2" id="amtTxt" type="textbox2"/>
+    </container>
+    <globalsequences/>
+    <skins/>
+</application>

@@ -1,0 +1,45 @@
+<application desc="" id="PaypalApiPoc" name="" smscode="">
+   <app-config>
+      <config-param name="APP_SMS_HEADER" value="null"/>
+   </app-config>
+   <services>
+      <service cachable="false" cacheduration="" id="getToken" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="https://api.sandbox.paypal.com/v1/oauth2/token?grant_type=$grant_type"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="includecookies" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="POST"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Authorization" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="Accept" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value=""/>
+            </header>
+            <param datatype="string" encode="true" name="grant_type" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="access_token" sms-name="" src="access_token" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="expires_in" sms-name="" src="expires_in" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="nonce" sms-name="" src="nonce" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="id" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+   </services>
+</application>

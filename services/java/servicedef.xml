@@ -1,0 +1,67 @@
+<application desc="" id="PaypalApiPoc" name="" smscode="">
+   <app-config>
+      <config-param name="APP_SMS_HEADER" value="null"/>
+   </app-config>
+   <services>
+      <service cachable="false" cacheduration="" id="executePayment" smscode="" smsenabled="false" type="javaConnector">
+         <service-config>
+            <config-param name="className" value="com.kony.paypal.PaypalService"/>
+            <config-param name="methodName" value="executePayment"/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="sockettimeout" value=""/>
+         </service-config>
+         <service-input>
+            <param datatype="string" format="None" formatvalue="" name="access_token" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="payment_id" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="payer_id" sms-name="" src="" target="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="payment_id" sms-name="" src="" target="response"/>
+            <param datatype="string" format="None" formatvalue="" name="state" sms-name="" src="" target="response"/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="getToken2" smscode="" smsenabled="false" type="javaConnector">
+         <service-config>
+            <config-param name="className" value="com.kony.paypal.PaypalService"/>
+            <config-param name="methodName" value="getToken"/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="sockettimeout" value=""/>
+         </service-config>
+         <service-input/>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="access_token" sms-name="" src="" target="response"/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="postPaypalSale" smscode="" smsenabled="false" type="javaConnector">
+         <service-config>
+            <config-param name="className" value="com.kony.paypal.PaypalService"/>
+            <config-param name="methodName" value="postPaypalSale"/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="sockettimeout" value=""/>
+         </service-config>
+         <service-input>
+            <param datatype="string" format="None" formatvalue="" name="description" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="total" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="currency" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="return_url" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="cancel_url" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="payment" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="access_token" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="payment_method" sms-name="" src="" target="" value=""/>
+            <param datatype="string" format="None" formatvalue="" name="intent" sms-name="" src="" target="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="payment" sms-name="" src="" target="response"/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+   </services>
+</application>
